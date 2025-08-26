@@ -384,7 +384,9 @@ const TutorDashboard = () => {
                                         <Form.Label>Môn học</Form.Label>
                                         <Form.Control
                                             type="text"
-                                            value={currentTutor.subjects?.join(', ') || ''}
+                                            value={Array.isArray(currentTutor.subjects)
+                                                ? currentTutor.subjects.join(', ')
+                                                : currentTutor.subjects || ''}
                                             readOnly
                                         />
                                     </Form.Group>
