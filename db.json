@@ -1,0 +1,301 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "email": "admin@gsnm.com",
+      "password": "admin123",
+      "role": "admin",
+      "fullName": "System Administrator",
+      "phone": "0123456789",
+      "avatar": "",
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "isActive": true
+    },
+    {
+      "id": "2",
+      "username": "tutor1",
+      "email": "duy@gsnm.com",
+      "password": "duy123",
+      "role": "tutor",
+      "fullName": "Nguyễn Thế Duy",
+      "phone": "0987654321",
+      "avatar": "",
+      "bio": "Giáo viên KHTN với 5 năm kinh nghiệm",
+      "subjects": [
+        "Toán",
+        "Lý",
+        "Hoá"
+      ],
+      "hourlyRate": 200000,
+      "rating": 4.8,
+      "totalReviews": 15,
+      "location": "Hà Nội",
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "isActive": true
+    },
+    {
+      "id": "3",
+      "username": "student1",
+      "email": "hiennq@gsnm.com",
+      "password": "hien123",
+      "role": "student",
+      "fullName": "Nguyễn Quang Hiển",
+      "phone": "0123456788",
+      "avatar": "",
+      "grade": "Lớp 12",
+      "subjects": [
+        "Toán",
+        "Hóa"
+      ],
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "isActive": true
+    },
+    {
+      "id": "4",
+      "username": "highaileri",
+      "email": "hai3d4s@gmail.com",
+      "password": "123abc!",
+      "fullName": "Trương Nam Hải",
+      "phone": "0359797703",
+      "role": "student",
+      "createdAt": "2025-08-25T14:17:23.662Z",
+      "isActive": true
+    },
+    {
+      "id": "5",
+      "fullName": "Phùng Duy Khương",
+      "email": "khuongpd@gsnm",
+      "phone": "0999123123",
+      "password": "khuong123",
+      "role": "tutor",
+      "createdAt": "2025-08-26T02:00:33.212Z",
+      "isActive": true
+    }
+  ],
+  "tutors": [
+    {
+      "id": "1",
+      "userId": 2,
+      "subjects": [
+        "Toán",
+        "Lý"
+      ],
+      "hourlyRate": 200000,
+      "rating": 4.8,
+      "totalReviews": 15,
+      "experience": "5 năm",
+      "education": "Đại học Bách Khoa Hà Nội",
+      "certificates": [
+        "Chứng chỉ sư phạm"
+      ],
+      "bio": "Giáo viên Toán với 5 năm kinh nghiệm giảng dạy",
+      "location": "Hà Nội",
+      "availability": [
+        {
+          "day": "monday",
+          "timeSlots": [
+            "09:00-11:00",
+            "14:00-16:00",
+            "19:00-21:00"
+          ]
+        },
+        {
+          "day": "tuesday",
+          "timeSlots": [
+            "09:00-11:00",
+            "14:00-16:00",
+            "19:00-21:00"
+          ]
+        },
+        {
+          "day": "wednesday",
+          "timeSlots": [
+            "09:00-11:00",
+            "14:00-16:00",
+            "19:00-21:00"
+          ]
+        },
+        {
+          "day": "thursday",
+          "timeSlots": [
+            "09:00-11:00",
+            "14:00-16:00",
+            "19:00-21:00"
+          ]
+        },
+        {
+          "day": "friday",
+          "timeSlots": [
+            "09:00-11:00",
+            "14:00-16:00",
+            "19:00-21:00"
+          ]
+        },
+        {
+          "day": "saturday",
+          "timeSlots": [
+            "09:00-11:00",
+            "14:00-16:00"
+          ]
+        },
+        {
+          "day": "sunday",
+          "timeSlots": [
+            "09:00-11:00",
+            "14:00-16:00"
+          ]
+        }
+      ],
+      "isActive": true
+    },
+    {
+      "id": "2",
+      "userId": "5",
+      "bio": "The zoi",
+      "hourlyRate": 1,
+      "subjects": "GDCD",
+      "experience": "10",
+      "location": "Hola",
+      "rating": 0,
+      "totalReviews": 0,
+      "isActive": true
+    }
+  ],
+  "students": [
+    {
+      "id": "1",
+      "userId": 3,
+      "grade": "Lớp 12",
+      "subjects": [
+        "Toán",
+        "Hóa"
+      ],
+      "parentName": "Trần Văn C",
+      "parentPhone": "0123456787",
+      "address": "123 Đường ABC, Hà Nội",
+      "isActive": true
+    }
+  ],
+  "schedules": [
+    {
+      "id": "1",
+      "tutorId": 1,
+      "studentId": 1,
+      "subject": "Toán",
+      "date": "2024-12-20",
+      "startTime": "14:00",
+      "endTime": "16:00",
+      "duration": 120,
+      "status": "confirmed",
+      "location": "Online",
+      "notes": "Ôn tập chương 1",
+      "createdAt": "2024-12-15T00:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "tutorId": 1,
+      "studentId": 1,
+      "subject": "Toán",
+      "date": "2024-12-22",
+      "startTime": "14:00",
+      "endTime": "16:00",
+      "duration": 120,
+      "status": "cancelled",
+      "location": "Online",
+      "notes": "Học chương 2",
+      "createdAt": "2024-12-15T00:00:00.000Z"
+    },
+    {
+      "id": "3",
+      "tutorId": 1,
+      "studentId": 3,
+      "subject": "Toán",
+      "date": "2025-08-27",
+      "startTime": "08:00",
+      "endTime": "10:00",
+      "duration": 120,
+      "status": "confirmed",
+      "location": "Online",
+      "notes": "Cha may`",
+      "createdAt": "2025-08-26T02:33:04.163Z"
+    }
+  ],
+  "attendance": [
+    {
+      "id": "1",
+      "scheduleId": 1,
+      "tutorId": 1,
+      "studentId": 1,
+      "checkInTime": "2024-12-20T14:00:00.000Z",
+      "checkOutTime": "2024-12-20T16:00:00.000Z",
+      "status": "completed",
+      "notes": "Buổi học tốt"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "1",
+      "tutorId": 1,
+      "studentId": 1,
+      "scheduleId": 1,
+      "rating": 5,
+      "comment": "Thầy dạy rất hay và dễ hiểu",
+      "createdAt": "2024-12-20T16:30:00.000Z"
+    }
+  ],
+  "subjects": [
+    {
+      "id": "1",
+      "name": "Toán",
+      "description": "Môn Toán học",
+      "isActive": true
+    },
+    {
+      "id": "2",
+      "name": "Lý",
+      "description": "Môn Vật lý",
+      "isActive": true
+    },
+    {
+      "id": "3",
+      "name": "Hóa",
+      "description": "Môn Hóa học",
+      "isActive": true
+    },
+    {
+      "id": "4",
+      "name": "Văn",
+      "description": "Môn Ngữ văn",
+      "isActive": true
+    },
+    {
+      "id": "5",
+      "name": "Anh",
+      "description": "Môn Tiếng Anh",
+      "isActive": true
+    }
+  ],
+  "locations": [
+    {
+      "id": "1",
+      "name": "Hà Nội",
+      "isActive": true
+    },
+    {
+      "id": "2",
+      "name": "TP. Hồ Chí Minh",
+      "isActive": true
+    },
+    {
+      "id": "3",
+      "name": "Đà Nẵng",
+      "isActive": true
+    },
+    {
+      "id": "4",
+      "name": "Online",
+      "isActive": true
+    }
+  ]
+}
