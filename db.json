@@ -191,9 +191,147 @@
       "isActive": true
     }
   ],
-  "schedules": [],
-  "attendance": [],
-  "reviews": [],
+  "schedules": [
+    {
+      "id": "1",
+      "tutorId": 1,
+      "studentId": 1,
+      "subject": "Toán",
+      "date": "2024-12-20",
+      "startTime": "14:00",
+      "endTime": "16:00",
+      "duration": 120,
+      "status": "confirmed",
+      "location": "Online",
+      "notes": "Ôn tập chương 1",
+      "createdAt": "2024-12-15T00:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "tutorId": 1,
+      "studentId": 1,
+      "subject": "Toán",
+      "date": "2024-12-22",
+      "startTime": "14:00",
+      "endTime": "16:00",
+      "duration": 120,
+      "status": "cancelled",
+      "location": "Online",
+      "notes": "Học chương 2",
+      "createdAt": "2024-12-15T00:00:00.000Z"
+    },
+    {
+      "id": "3",
+      "tutorId": 1,
+      "studentId": 3,
+      "subject": "Toán",
+      "date": "2025-08-27",
+      "startTime": "08:00",
+      "endTime": "10:00",
+      "duration": 120,
+      "status": "completed",
+      "location": "Online",
+      "notes": "Cha may`",
+      "createdAt": "2025-08-26T02:33:04.163Z"
+    },
+    {
+      "id": "4",
+      "tutorId": 2,
+      "studentId": 3,
+      "subject": "GDCD",
+      "date": "2025-08-26",
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "duration": 120,
+      "status": "completed",
+      "location": "Hà Nội",
+      "notes": "hoc het",
+      "createdAt": "2025-08-26T08:41:29.882Z"
+    },
+    {
+      "id": "5",
+      "tutorId": 2,
+      "studentId": 6,
+      "subject": "GDCD",
+      "date": "2025-08-28",
+      "startTime": "08:00",
+      "endTime": "10:00",
+      "duration": 120,
+      "status": "completed",
+      "location": "Online",
+      "notes": "",
+      "createdAt": "2025-08-26T09:17:25.397Z"
+    }
+  ],
+  "attendance": [
+    {
+      "id": "1",
+      "scheduleId": 1,
+      "tutorId": 1,
+      "studentId": 1,
+      "checkInTime": "2024-12-20T14:00:00.000Z",
+      "checkOutTime": "2024-12-20T16:00:00.000Z",
+      "status": "completed",
+      "notes": "Buổi học tốt"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "1",
+      "tutorId": 1,
+      "studentId": 1,
+      "scheduleId": 1,
+      "rating": 5,
+      "comment": "Thầy dạy rất hay và dễ hiểu",
+      "createdAt": "2024-12-20T16:30:00.000Z"
+    },
+    {
+      "rating": 5,
+      "comment": "quá là oke\n\n",
+      "id": "bf45"
+    },
+    {
+      "rating": 5,
+      "comment": "như cứt cứt chình",
+      "id": "bda0"
+    },
+    {
+      "rating": 5,
+      "comment": "như cứt em ",
+      "id": "b7d3"
+    },
+    {
+      "id": "3d12",
+      "studentId": "3",
+      "tutorId": 1,
+      "scheduleId": "3",
+      "rating": 5,
+      "comment": ""
+    },
+    {
+      "rating": 1,
+      "comment": "",
+      "id": "a2f3"
+    },
+    {
+      "id": "cb8e",
+      "studentId": "3",
+      "tutorId": 2,
+      "scheduleId": "4",
+      "rating": 5,
+      "comment": "very good\n\n",
+      "createdAt": "2025-08-26T11:29:23.459Z"
+    },
+    {
+      "id": "7464",
+      "studentId": "6",
+      "tutorId": 2,
+      "scheduleId": "5",
+      "rating": 2,
+      "comment": "em ko hieu:(",
+      "createdAt": "2025-08-26T11:51:01.263Z"
+    }
+  ],
   "subjects": [
     {
       "id": "1",

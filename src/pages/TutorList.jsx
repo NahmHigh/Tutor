@@ -100,6 +100,51 @@ const TutorList = () => {
     return sorted;
   }, [tutors, filters, sortBy, sortOrder]);
 
+  const handleFilterChange = (e) => {
+    setFilters({
+      ...filters,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const filteredTutors = useMemo(() => {
+    return tutors.filter((tutor) => {
+        // Search filter (tìm cả tên và mô tả)
+      const fullName = users.find((u) => u.id === tutor.userId)?.fullName || "";
+      if (
+        filters.search &&
+        !(
+          fullName.toLowerCase().includes(filters.search.toLowerCase()) ||
+          tutor.bio.toLowerCase().includes(filters.search.toLowerCase())
+      )) {
+        return false;
+      }
+
+      // Subject filter
+      if (filters.subject && !tutor.subjects?.includes(filters.subject)) {
+        return false;
+      }
+
+      // Location filter
+      if (filters.location && tutor.location !== filters.location) {
+        return false;
+      }
+
+      // Rating filter
+      if (filters.minRating && tutor.rating < filters.minRating) {
+        return false;
+      }
+
+      // Price filter
+      if (filters.maxPrice && tutor.hourlyRate > parseInt(filters.maxPrice)) {
+        return false;
+      }
+
+      return true;
+    });
+  }, [tutors, filters]);
+
+
   const clearFilters = () => {
     setFilters({
       search: "",
@@ -249,6 +294,7 @@ const TutorList = () => {
               </Button>
             </div>
           </div>
+
         </Card.Body>
       </Card>
 
@@ -288,6 +334,8 @@ const TutorList = () => {
                       users.find((u) => String(u.id) === String(tutor.userId))
                         ?.fullName
                     }
+                    {users.find((u) => u.id === tutor.userId)?.fullName}
+
                   </Card.Title>
 
                   <div className="flex-grow-1">
