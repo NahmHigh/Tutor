@@ -21,12 +21,8 @@
       "fullName": "Nguyễn Thế Duy",
       "phone": "0987654321",
       "avatar": "",
-      "bio": "Giáo viên KHTN với 5 năm kinh nghiệm",
-      "subjects": [
-        "Toán",
-        "Lý",
-        "Hoá"
-      ],
+      "bio": "Giáo viên KHTN",
+      "subjects": ["Toán", "Lý", "Hoá"],
       "hourlyRate": 200000,
       "rating": 4.8,
       "totalReviews": 15,
@@ -44,10 +40,7 @@
       "phone": "0123456788",
       "avatar": "",
       "grade": "Lớp 12",
-      "subjects": [
-        "Toán",
-        "Hóa"
-      ],
+      "subjects": ["Toán", "Hóa"],
       "createdAt": "2024-01-01T00:00:00.000Z",
       "isActive": true
     },
@@ -64,87 +57,97 @@
     },
     {
       "id": "5",
+      "username": "tutorX",
       "fullName": "Phùng Duy Khương",
-      "email": "khuongpd@gsnm",
+      "email": "khuongpd@gsnm.com",
       "phone": "0999123123",
       "password": "khuong123",
       "role": "tutor",
       "createdAt": "2025-08-26T02:00:33.212Z",
+      "isActive": true
+    },
+    {
+      "id": "6",
+      "username": "tutor2",
+      "email": "minh@gsnm.com",
+      "password": "minh123",
+      "role": "tutor",
+      "fullName": "Trần Văn Minh",
+      "phone": "0901234567",
+      "avatar": "",
+      "createdAt": "2025-08-26T09:00:00.000Z",
+      "isActive": true
+    },
+    {
+      "id": "7",
+      "username": "tutor3",
+      "email": "lan@gsnm.com",
+      "password": "lan123",
+      "role": "tutor",
+      "fullName": "Phạm Thu Lan",
+      "phone": "0912345678",
+      "avatar": "",
+      "createdAt": "2025-08-26T09:05:00.000Z",
+      "isActive": true
+    },
+    {
+      "id": "8",
+      "username": "tutor4",
+      "email": "hung@gsnm.com",
+      "password": "hung123",
+      "role": "tutor",
+      "fullName": "Ngô Văn Hùng",
+      "phone": "0923456789",
+      "avatar": "",
+      "createdAt": "2025-08-26T09:10:00.000Z",
+      "isActive": true
+    },
+    {
+      "id": "9",
+      "username": "tutor5",
+      "email": "hoa@gsnm.com",
+      "password": "hoa123",
+      "role": "tutor",
+      "fullName": "Đỗ Thị Hoa",
+      "phone": "0934567890",
+      "avatar": "",
+      "createdAt": "2025-08-26T09:15:00.000Z",
+      "isActive": true
+    },
+    {
+      "id": "10",
+      "username": "tutor6",
+      "email": "son@gsnm.com",
+      "password": "son123",
+      "role": "tutor",
+      "fullName": "Lê Quang Sơn",
+      "phone": "0945678901",
+      "avatar": "",
+      "createdAt": "2025-08-26T09:20:00.000Z",
       "isActive": true
     }
   ],
   "tutors": [
     {
       "id": "1",
-      "userId": 2,
-      "subjects": [
-        "Toán",
-        "Lý"
-      ],
+      "userId": "2",
+      "subjects": ["Toán", "Lý"],
       "hourlyRate": 200000,
       "rating": 4.8,
       "totalReviews": 15,
       "experience": "5 năm",
       "education": "Đại học Bách Khoa Hà Nội",
-      "certificates": [
-        "Chứng chỉ sư phạm"
-      ],
+      "certificates": ["Chứng chỉ sư phạm"],
       "bio": "Giáo viên Toán với 5 năm kinh nghiệm giảng dạy",
       "location": "Hà Nội",
       "availability": [
         {
           "day": "monday",
-          "timeSlots": [
-            "09:00-11:00",
-            "14:00-16:00",
-            "19:00-21:00"
-          ]
+          "timeSlots": ["09:00-11:00", "14:00-16:00", "19:00-21:00"]
         },
         {
           "day": "tuesday",
-          "timeSlots": [
-            "09:00-11:00",
-            "14:00-16:00",
-            "19:00-21:00"
-          ]
-        },
-        {
-          "day": "wednesday",
-          "timeSlots": [
-            "09:00-11:00",
-            "14:00-16:00",
-            "19:00-21:00"
-          ]
-        },
-        {
-          "day": "thursday",
-          "timeSlots": [
-            "09:00-11:00",
-            "14:00-16:00",
-            "19:00-21:00"
-          ]
-        },
-        {
-          "day": "friday",
-          "timeSlots": [
-            "09:00-11:00",
-            "14:00-16:00",
-            "19:00-21:00"
-          ]
-        },
-        {
-          "day": "saturday",
-          "timeSlots": [
-            "09:00-11:00",
-            "14:00-16:00"
-          ]
-        },
-        {
-          "day": "sunday",
-          "timeSlots": [
-            "09:00-11:00",
-            "14:00-16:00"
-          ]
+          "timeSlots": ["09:00-11:00", "14:00-16:00", "19:00-21:00"]
         }
       ],
       "isActive": true
@@ -154,96 +157,43 @@
       "userId": "5",
       "bio": "The zoi",
       "hourlyRate": 1,
-      "subjects": "GDCD",
+      "subjects": ["GDCD"],
       "experience": "10",
       "location": "Hola",
       "rating": 0,
       "totalReviews": 0,
+      "isActive": true
+    },
+    {
+      "id": "3",
+      "userId": "6",
+      "subjects": ["Anh", "Văn"],
+      "hourlyRate": 150000,
+      "rating": 4.5,
+      "totalReviews": 8,
+      "experience": "3 năm",
+      "education": "Đại học Sư phạm Hà Nội",
+      "certificates": ["Chứng chỉ TESOL"],
+      "bio": "Gia sư Tiếng Anh và Ngữ văn, kinh nghiệm luyện thi THPT",
+      "location": "TP. Hồ Chí Minh",
       "isActive": true
     }
   ],
   "students": [
     {
       "id": "1",
-      "userId": 3,
+      "userId": "3",
       "grade": "Lớp 12",
-      "subjects": [
-        "Toán",
-        "Hóa"
-      ],
+      "subjects": ["Toán", "Hóa"],
       "parentName": "Trần Văn C",
       "parentPhone": "0123456787",
       "address": "123 Đường ABC, Hà Nội",
       "isActive": true
     }
   ],
-  "schedules": [
-    {
-      "id": "1",
-      "tutorId": 1,
-      "studentId": 1,
-      "subject": "Toán",
-      "date": "2024-12-20",
-      "startTime": "14:00",
-      "endTime": "16:00",
-      "duration": 120,
-      "status": "confirmed",
-      "location": "Online",
-      "notes": "Ôn tập chương 1",
-      "createdAt": "2024-12-15T00:00:00.000Z"
-    },
-    {
-      "id": "2",
-      "tutorId": 1,
-      "studentId": 1,
-      "subject": "Toán",
-      "date": "2024-12-22",
-      "startTime": "14:00",
-      "endTime": "16:00",
-      "duration": 120,
-      "status": "cancelled",
-      "location": "Online",
-      "notes": "Học chương 2",
-      "createdAt": "2024-12-15T00:00:00.000Z"
-    },
-    {
-      "id": "3",
-      "tutorId": 1,
-      "studentId": 3,
-      "subject": "Toán",
-      "date": "2025-08-27",
-      "startTime": "08:00",
-      "endTime": "10:00",
-      "duration": 120,
-      "status": "confirmed",
-      "location": "Online",
-      "notes": "Cha may`",
-      "createdAt": "2025-08-26T02:33:04.163Z"
-    }
-  ],
-  "attendance": [
-    {
-      "id": "1",
-      "scheduleId": 1,
-      "tutorId": 1,
-      "studentId": 1,
-      "checkInTime": "2024-12-20T14:00:00.000Z",
-      "checkOutTime": "2024-12-20T16:00:00.000Z",
-      "status": "completed",
-      "notes": "Buổi học tốt"
-    }
-  ],
-  "reviews": [
-    {
-      "id": "1",
-      "tutorId": 1,
-      "studentId": 1,
-      "scheduleId": 1,
-      "rating": 5,
-      "comment": "Thầy dạy rất hay và dễ hiểu",
-      "createdAt": "2024-12-20T16:30:00.000Z"
-    }
-  ],
+  "schedules": [],
+  "attendance": [],
+  "reviews": [],
   "subjects": [
     {
       "id": "1",
@@ -251,12 +201,7 @@
       "description": "Môn Toán học",
       "isActive": true
     },
-    {
-      "id": "2",
-      "name": "Lý",
-      "description": "Môn Vật lý",
-      "isActive": true
-    },
+    { "id": "2", "name": "Lý", "description": "Môn Vật lý", "isActive": true },
     {
       "id": "3",
       "name": "Hóa",
@@ -277,25 +222,9 @@
     }
   ],
   "locations": [
-    {
-      "id": "1",
-      "name": "Hà Nội",
-      "isActive": true
-    },
-    {
-      "id": "2",
-      "name": "TP. Hồ Chí Minh",
-      "isActive": true
-    },
-    {
-      "id": "3",
-      "name": "Đà Nẵng",
-      "isActive": true
-    },
-    {
-      "id": "4",
-      "name": "Online",
-      "isActive": true
-    }
+    { "id": "1", "name": "Hà Nội", "isActive": true },
+    { "id": "2", "name": "TP. Hồ Chí Minh", "isActive": true },
+    { "id": "3", "name": "Đà Nẵng", "isActive": true },
+    { "id": "4", "name": "Online", "isActive": true }
   ]
 }
