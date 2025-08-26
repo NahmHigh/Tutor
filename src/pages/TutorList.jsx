@@ -20,13 +20,14 @@ import {
   FaDollarSign,
   FaBook,
   FaUser,
+  FaSortAmountDownAlt,
+  FaSortAmountUpAlt,
 } from "react-icons/fa";
 import { RiProfileLine } from "react-icons/ri";
 
 const TutorList = () => {
   const { user, isAuthenticated } = useAuth();
   const { users, tutors, subjects, locations, loading } = useAppContext();
-
   const [filters, setFilters] = useState({
     search: "",
     subject: "",
@@ -34,6 +35,70 @@ const TutorList = () => {
     minRating: 0,
     maxPrice: "",
   });
+  const [sortBy, setSortBy] = useState("");
+  const [sortOrder, setSortOrder] = useState("asc");
+  const handleSort = (e) => {
+    setSortBy(e.target.value);
+  };
+  const toggleSortOrder = () => {
+    setSortOrder((prev) => (prev === "asc" ? "desc" : "asc"));
+  };
+  const handleFilterChange = (e) => {
+    setFilters({
+      ...filters,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const filteredTutors = useMemo(() => {
+    const filtered = tutors.filter((tutor) => {
+      // Search filter
+      if (
+        filters.search &&
+        !tutor.bio.toLowerCase().includes(filters.search.toLowerCase())
+      ) {
+        return false;
+      }
+
+      // Subject filter
+      if (filters.subject && !tutor.subjects?.includes(filters.subject)) {
+        return false;
+      }
+
+      // Location filter
+      if (filters.location && tutor.location !== filters.location) {
+        return false;
+      }
+
+      // Rating filter
+      if (filters.minRating && tutor.rating < filters.minRating) {
+        return false;
+      }
+
+      // Price filter
+      if (filters.maxPrice && tutor.hourlyRate > parseInt(filters.maxPrice)) {
+        return false;
+      }
+
+      return true;
+    });
+
+    const sorted = [...filtered];
+    const order = sortOrder === "asc" ? 1 : -1;
+    if (sortBy === "rating") {
+      sorted.sort((a, b) => (a.rating - b.rating) * order);
+    } else if (sortBy === "hourlyRate") {
+      sorted.sort(
+        (a, b) => ((a.hourlyRate ?? 0) - (b.hourlyRate ?? 0)) * order
+      );
+    } else if (sortBy === "totalReviews") {
+      sorted.sort(
+        (a, b) => ((a.totalReviews ?? 0) - (b.totalReviews ?? 0)) * order
+      );
+    }
+
+    return sorted;
+  }, [tutors, filters, sortBy, sortOrder]);
 
   const handleFilterChange = (e) => {
     setFilters({
@@ -78,6 +143,7 @@ const TutorList = () => {
       return true;
     });
   }, [tutors, filters]);
+
 
   const clearFilters = () => {
     setFilters({
@@ -196,6 +262,39 @@ const TutorList = () => {
               {filteredTutors.length} kết quả
             </Badge>
           </div>
+          <div className="d-flex justify-content-end mb-3">
+            <div className="d-flex align-items-center gap-2">
+              <Form.Select
+                size="md"
+                onChange={handleSort}
+                value={sortBy}
+                style={{ width: "220px" }}
+              >
+                <option value="">-- Sort by --</option>
+                <option value="rating">Rating</option>
+                <option value="hourlyRate">Price</option>
+                <option value="totalReviews">Total Reviews</option>
+              </Form.Select>
+              <Button
+                variant="outline-secondary"
+                size="md"
+                onClick={toggleSortOrder}
+              >
+                {sortOrder === "asc" ? (
+                  <span className="d-inline-flex align-items-center gap-2">
+                    <FaSortAmountUpAlt />
+                    <span className="small">Asc</span>
+                  </span>
+                ) : (
+                  <span className="d-inline-flex align-items-center gap-2">
+                    <FaSortAmountDownAlt />
+                    <span className="small">Desc</span>
+                  </span>
+                )}
+              </Button>
+            </div>
+          </div>
+
         </Card.Body>
       </Card>
 
@@ -231,7 +330,12 @@ const TutorList = () => {
                   </div>
 
                   <Card.Title className="text-center h5 mb-3">
+                    {
+                      users.find((u) => String(u.id) === String(tutor.userId))
+                        ?.fullName
+                    }
                     {users.find((u) => u.id === tutor.userId)?.fullName}
+
                   </Card.Title>
 
                   <div className="flex-grow-1">
