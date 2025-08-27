@@ -56,17 +56,6 @@
       "isActive": true
     },
     {
-      "id": "5",
-      "username": "tutorX",
-      "fullName": "Phùng Duy Khương",
-      "email": "khuongpd@gsnm.com",
-      "phone": "0999123123",
-      "password": "khuong123",
-      "role": "tutor",
-      "createdAt": "2025-08-26T02:00:33.212Z",
-      "isActive": true
-    },
-    {
       "id": "6",
       "username": "tutor2",
       "email": "minh@gsnm.com",
@@ -74,57 +63,22 @@
       "role": "tutor",
       "fullName": "Trần Văn Minh",
       "phone": "0901234567",
+      "subjects": ["Toán", "Hoá"],
       "avatar": "",
       "createdAt": "2025-08-26T09:00:00.000Z",
       "isActive": true
     },
     {
-      "id": "7",
-      "username": "tutor3",
-      "email": "lan@gsnm.com",
-      "password": "lan123",
-      "role": "tutor",
-      "fullName": "Phạm Thu Lan",
-      "phone": "0912345678",
-      "avatar": "",
-      "createdAt": "2025-08-26T09:05:00.000Z",
-      "isActive": true
-    },
-    {
-      "id": "8",
-      "username": "tutor4",
-      "email": "hung@gsnm.com",
-      "password": "hung123",
-      "role": "tutor",
-      "fullName": "Ngô Văn Hùng",
-      "phone": "0923456789",
-      "avatar": "",
-      "createdAt": "2025-08-26T09:10:00.000Z",
-      "isActive": true
-    },
-    {
-      "id": "9",
-      "username": "tutor5",
-      "email": "hoa@gsnm.com",
-      "password": "hoa123",
-      "role": "tutor",
-      "fullName": "Đỗ Thị Hoa",
-      "phone": "0934567890",
-      "avatar": "",
-      "createdAt": "2025-08-26T09:15:00.000Z",
-      "isActive": true
-    },
-    {
-      "id": "10",
-      "username": "tutor6",
-      "email": "son@gsnm.com",
-      "password": "son123",
-      "role": "tutor",
-      "fullName": "Lê Quang Sơn",
-      "phone": "0945678901",
-      "avatar": "",
-      "createdAt": "2025-08-26T09:20:00.000Z",
-      "isActive": true
+      "id": "11",
+      "fullName": "Nguyen Quang Hien",
+      "email": "hiennn30@gmail.com",
+      "phone": "0866876103",
+      "password": "123456",
+      "username": "hiennn30",
+      "role": "student",
+      "createdAt": "2025-08-27T02:39:52.361Z",
+      "isActive": true,
+      "avatar": ""
     }
   ],
   "tutors": [
@@ -150,18 +104,6 @@
           "timeSlots": ["09:00-11:00", "14:00-16:00", "19:00-21:00"]
         }
       ],
-      "isActive": true
-    },
-    {
-      "id": "2",
-      "userId": "5",
-      "bio": "The zoi",
-      "hourlyRate": 1,
-      "subjects": ["GDCD"],
-      "experience": "10",
-      "location": "Hola",
-      "rating": 0,
-      "totalReviews": 0,
       "isActive": true
     },
     {
@@ -261,6 +203,20 @@
       "location": "Online",
       "notes": "",
       "createdAt": "2025-08-26T09:17:25.397Z"
+    },
+    {
+      "id": "6",
+      "tutorId": 1,
+      "studentId": 3,
+      "subject": "Toán",
+      "date": "2025-08-27",
+      "startTime": "10:00",
+      "endTime": "11:00",
+      "duration": 60,
+      "status": "pending",
+      "location": "Online",
+      "notes": "",
+      "createdAt": "2025-08-27T03:38:04.712Z"
     }
   ],
   "attendance": [
@@ -292,12 +248,12 @@
     },
     {
       "rating": 5,
-      "comment": "như cứt cứt chình",
+      "comment": "hi",
       "id": "bda0"
     },
     {
       "rating": 5,
-      "comment": "như cứt em ",
+      "comment": "như cha ",
       "id": "b7d3"
     },
     {
@@ -339,7 +295,12 @@
       "description": "Môn Toán học",
       "isActive": true
     },
-    { "id": "2", "name": "Lý", "description": "Môn Vật lý", "isActive": true },
+    {
+      "id": "2",
+      "name": "Lý",
+      "description": "Môn Vật lý",
+      "isActive": true
+    },
     {
       "id": "3",
       "name": "Hóa",
@@ -360,9 +321,25 @@
     }
   ],
   "locations": [
-    { "id": "1", "name": "Hà Nội", "isActive": true },
-    { "id": "2", "name": "TP. Hồ Chí Minh", "isActive": true },
-    { "id": "3", "name": "Đà Nẵng", "isActive": true },
-    { "id": "4", "name": "Online", "isActive": true }
+    {
+      "id": "1",
+      "name": "Hà Nội",
+      "isActive": true
+    },
+    {
+      "id": "2",
+      "name": "TP. Hồ Chí Minh",
+      "isActive": true
+    },
+    {
+      "id": "3",
+      "name": "Đà Nẵng",
+      "isActive": true
+    },
+    {
+      "id": "4",
+      "name": "Online",
+      "isActive": true
+    }
   ]
 }
