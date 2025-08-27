@@ -162,7 +162,6 @@ const AdminDashboard = () => {
       </Container>
     );
   }
-
   return (
     <Container className="mt-4 mb-4">
       <Row className="mb-4">
@@ -296,7 +295,7 @@ const AdminDashboard = () => {
                 <thead>
                   <tr>
                     <th>ID</th>
-                    <th>Mô tả</th>
+                    <th>Tên</th>
                     <th>Môn học</th>
                     <th>Giá/giờ</th>
                     <th>Đánh giá</th>
@@ -304,38 +303,44 @@ const AdminDashboard = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {tutors.map((tutor) => (
-                    <tr key={tutor.id}>
-                      <td>{tutor.id}</td>
-                      <td>{tutor.bio}</td>
-                      <td>
-                        {Array.isArray(tutor.subjects)
-                          ? tutor.subjects.join(", ")
-                          : tutor.subjects || ""}
-                      </td>
-                      <td>{tutor.hourlyRate?.toLocaleString("vi-VN")} VNĐ</td>
-                      <td>
-                        {tutor.rating}/5 ({tutor.totalReviews})
-                      </td>
-                      <td>
-                        <Button
-                          variant="outline-info"
-                          size="sm"
-                          className="me-2"
-                          onClick={() => handleOpenModal("tutor", tutor)}
-                        >
-                          <FaEdit />
-                        </Button>
-                        <Button
-                          variant="outline-danger"
-                          size="sm"
-                          onClick={() => handleDelete("tutor", tutor.id)}
-                        >
-                          <FaTimes />
-                        </Button>
-                      </td>
-                    </tr>
-                  ))}
+                  {tutors.map((tutor) => {
+                    const user = users.find(
+                      (u) => String(u.id) === String(tutor.userId)
+                    );
+                    const tutorName = user?.fullName || "";
+                    return (
+                      <tr key={tutor.id}>
+                        <td>{tutor.id}</td>
+                        <td>{tutorName}</td>
+                        <td>
+                          {Array.isArray(tutor.subjects)
+                            ? tutor.subjects.join(", ")
+                            : tutor.subjects || ""}
+                        </td>
+                        <td>{tutor.hourlyRate?.toLocaleString("vi-VN")} VNĐ</td>
+                        <td>
+                          {tutor.rating}/5 ({tutor.totalReviews})
+                        </td>
+                        <td>
+                          <Button
+                            variant="outline-info"
+                            size="sm"
+                            className="me-2"
+                            onClick={() => handleOpenModal("tutor", tutor)}
+                          >
+                            <FaEdit />
+                          </Button>
+                          <Button
+                            variant="outline-danger"
+                            size="sm"
+                            onClick={() => handleDelete("tutor", tutor.id)}
+                          >
+                            <FaTimes />
+                          </Button>
+                        </td>
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </Table>
             </Card.Body>
@@ -414,7 +419,6 @@ const AdminDashboard = () => {
                     }
                     required
                   >
-                    <option value="admin">Quản trị viên</option>
                     <option value="tutor">Giáo viên</option>
                     <option value="student">Học sinh</option>
                   </Form.Control>

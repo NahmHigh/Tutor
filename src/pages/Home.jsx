@@ -1,18 +1,23 @@
-import React from 'react';
-import { Container, Row, Col, Card, Button, Carousel } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import { useAuth } from '../auth/AuthContext';
-import { useAppContext } from '../provider/AppProvider';
-import { FaChalkboardTeacher, FaBookOpen, FaClock, FaStar, FaArrowRight, FaUser } from 'react-icons/fa';
+import React from "react";
+import { Container, Row, Col, Card, Button, Carousel } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { useAuth } from "../auth/AuthContext";
+import { useAppContext } from "../provider/AppProvider";
+import {
+  FaChalkboardTeacher,
+  FaBookOpen,
+  FaClock,
+  FaStar,
+  FaArrowRight,
+  FaUser,
+} from "react-icons/fa";
 
 const Home = () => {
   const { isAuthenticated, user } = useAuth();
   const { tutors, subjects, loading } = useAppContext();
 
   // Get top rated tutors
-  const topTutors = tutors
-    .filter(tutor => tutor.rating > 4.5)
-    .slice(0, 3);
+  const topTutors = tutors.filter((tutor) => tutor.rating > 4.5).slice(0, 3);
 
   if (loading) {
     return (
@@ -27,7 +32,12 @@ const Home = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-primary text-white py-5">
+      <section
+        className="bg-primary text-white py-5"
+        style={{
+          background: "",
+        }}
+      >
         <Container>
           <Row className="align-items-center">
             <Col md={6}>
@@ -35,8 +45,8 @@ const Home = () => {
                 Tìm Giáo Viên Gia Sư Tốt Nhất
               </h1>
               <p className="lead mb-4">
-                Kết nối với hàng nghìn giáo viên chất lượng cao,
-                học tập hiệu quả với chi phí hợp lý.
+                Kết nối với hàng nghìn giáo viên chất lượng cao, học tập hiệu
+                quả với chi phí hợp lý.
               </p>
               <div className="d-flex gap-3">
                 {!isAuthenticated ? (
@@ -44,7 +54,12 @@ const Home = () => {
                     <Button as={Link} to="/register" variant="light" size="lg">
                       Bắt đầu ngay
                     </Button>
-                    <Button as={Link} to="/tutors" variant="outline-light" size="lg">
+                    <Button
+                      as={Link}
+                      to="/tutors"
+                      variant="outline-light"
+                      size="lg"
+                    >
                       Tìm giáo viên
                     </Button>
                   </>
@@ -57,7 +72,10 @@ const Home = () => {
             </Col>
             <Col md={6}>
               <div className="text-center">
-                <FaChalkboardTeacher size={200} className="text-white opacity-75" />
+                <FaChalkboardTeacher
+                  size={200}
+                  className="text-white opacity-75"
+                />
               </div>
             </Col>
           </Row>
@@ -79,7 +97,10 @@ const Home = () => {
             <Col md={4} className="mb-4">
               <Card className="h-100 text-center border-0 shadow-sm">
                 <Card.Body className="p-4">
-                  <FaChalkboardTeacher size={50} className="text-primary mb-3" />
+                  <FaChalkboardTeacher
+                    size={50}
+                    className="text-primary mb-3"
+                  />
                   <Card.Title>Giáo Viên Chất Lượng</Card.Title>
                   <Card.Text>
                     Đội ngũ giáo viên được tuyển chọn kỹ lưỡng với trình độ
@@ -94,8 +115,8 @@ const Home = () => {
                   <FaClock size={50} className="text-success mb-3" />
                   <Card.Title>Linh Hoạt Thời Gian</Card.Title>
                   <Card.Text>
-                    Học tập theo lịch trình phù hợp với bạn.
-                    Có thể học online hoặc offline tùy theo nhu cầu.
+                    Học tập theo lịch trình phù hợp với bạn. Có thể học online
+                    hoặc offline tùy theo nhu cầu.
                   </Card.Text>
                 </Card.Body>
               </Card>
@@ -106,8 +127,8 @@ const Home = () => {
                   <FaStar size={50} className="text-warning mb-3" />
                   <Card.Title>Đánh Giá Minh Bạch</Card.Title>
                   <Card.Text>
-                    Hệ thống đánh giá và phản hồi từ học viên giúp bạn
-                    chọn được giáo viên phù hợp nhất.
+                    Hệ thống đánh giá và phản hồi từ học viên giúp bạn chọn được
+                    giáo viên phù hợp nhất.
                   </Card.Text>
                 </Card.Body>
               </Card>
@@ -115,66 +136,6 @@ const Home = () => {
           </Row>
         </Container>
       </section>
-
-      {/* Top Tutors Section */}
-      {topTutors.length > 0 && (
-        <section className="py-5 bg-light">
-          <Container>
-            <Row className="text-center mb-5">
-              <Col>
-                <h2 className="fw-bold mb-3">Giáo Viên Nổi Bật</h2>
-                <p className="text-muted">
-                  Những giáo viên có đánh giá cao nhất từ học viên
-                </p>
-              </Col>
-            </Row>
-            <Row>
-              {topTutors.map((tutor) => (
-                <Col md={4} key={tutor.id} className="mb-4">
-                  <Card className="h-100 shadow-sm">
-                    <Card.Body className="text-center">
-                      <div className="mb-3">
-                        <FaUser size={60} className="text-primary" />
-                      </div>
-                      <Card.Title>{tutor.bio}</Card.Title>
-                      <Card.Text>
-                        <strong>Môn học:</strong> {tutor.subjects?.join(', ')}
-                      </Card.Text>
-                      <div className="mb-3">
-                        <FaStar className="text-warning me-1" />
-                        <span className="fw-bold">{tutor.rating}/5</span>
-                        <span className="text-muted ms-2">
-                          ({tutor.totalReviews} đánh giá)
-                        </span>
-                      </div>
-                      <p className="text-success fw-bold">
-                        {tutor.hourlyRate?.toLocaleString('vi-VN')} VND/giờ
-                      </p>
-                      {isAuthenticated && user?.role === 'student' && (
-                        <Button
-                          as={Link}
-                          to={`/booking/${tutor.id}`}
-                          variant="primary"
-                          size="sm"
-                        >
-                          Đặt lịch
-                        </Button>
-                      )}
-                    </Card.Body>
-                  </Card>
-                </Col>
-              ))}
-            </Row>
-            <Row className="text-center mt-4">
-              <Col>
-                <Button as={Link} to="/tutors" variant="primary" size="lg">
-                  Xem tất cả giáo viên <FaArrowRight className="ms-2" />
-                </Button>
-              </Col>
-            </Row>
-          </Container>
-        </section>
-      )}
 
       {/* Subjects Section */}
       <section className="py-5">

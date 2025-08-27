@@ -47,7 +47,7 @@ const Header = () => {
       expand="lg"
       className="mb-3"
       style={{
-        background: "linear-gradient(to right, #60d0d2 0%, #1bf3a0 100%)",
+        background: "linear-gradient(to right, #306465ff 0%, #2ac388ff 100%)",
       }}
     >
       <Container>
